@@ -8,7 +8,7 @@ df.head() # see first 5 rows from the dataset.
 
 df.shape #to get number of records and columns
 
-df.info() 
+df.info()  # to get some info
 
 df.drop(['id' , 'imdb_id' , 'original_title' , 'homepage', 'tagline' ,'director' , 'cast' ,'overview','production_companies','release_year','keywords','genres','budget_adj','revenue_adj'] ,axis=1, inplace=True)
 
