@@ -19,3 +19,9 @@ df.hist(figsize=(10,8)); # histogram for all columns.
 df.info()
 
 df.describe()
+
+df_zero=df.query('budget == 0 and revenue == 0 ') # to get the records that have budget and revenue = 0 
+df_zero.shape
+
+df_not_zero=df.query('budget != 0 and revenue != 0 ') # to get the records that doesn't have budget and revenue = 0 
+df_not_zero.shape
