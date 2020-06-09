@@ -25,3 +25,8 @@ df_zero.shape
 
 df_not_zero=df.query('budget != 0 and revenue != 0 ') # to get the records that doesn't have budget and revenue = 0 
 df_not_zero.shape
+
+#Now I will compare Revenue with Run Time
+p=df_not_zero.plot(x='runtime',y='revenue',kind="scatter",figsize=(15,8)); 
+p.set_title("Compare Run Time and Revenue", fontsize = 15)
+p.set_xlabel("Run Time (Min)");
