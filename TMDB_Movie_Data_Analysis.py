@@ -30,3 +30,9 @@ df_not_zero.shape
 p=df_not_zero.plot(x='runtime',y='revenue',kind="scatter",figsize=(15,8)); 
 p.set_title("Compare Run Time and Revenue", fontsize = 15)
 p.set_xlabel("Run Time (Min)");
+
+
+#Now I will compare Revenue with vote_count.¶
+
+p1=df_not_zero.plot(x='vote_count',y='revenue',kind="scatter",figsize=(15,8));
+p1.set_title("Compare vote_count and Revenue", fontsize = 15)
