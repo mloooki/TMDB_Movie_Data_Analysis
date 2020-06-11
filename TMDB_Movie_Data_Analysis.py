@@ -45,3 +45,11 @@ between_2000_4000 = df_not_zero.query('vote_count > 2000 and vote_count <=4000')
 between_4000_6000 = df_not_zero.query('vote_count > 4000 and vote_count <=6000').mean()['revenue']
 between_6000_8000 = df_not_zero.query('vote_count > 4000 and vote_count <=6000').mean()['revenue']
 between_8000_10000 = df_not_zero.query('vote_count > 8000 and vote_count <=10000').mean()['revenue']
+
+
+# bar chart
+plt.figure(figsize=(15,8))
+plt.bar(['>=2000','between_2000_4000','between_4000_6000','between_6000_8000','between_8000_10000'],[less_than_2000,between_2000_4000,between_4000_6000,between_6000_8000,between_8000_10000])
+plt.title('Compare vote_count and Revenue')
+plt.xlabel('Vote Count')
+plt.ylabel('avg Revenue');
