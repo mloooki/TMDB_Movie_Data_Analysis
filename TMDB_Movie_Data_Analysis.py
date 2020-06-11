@@ -36,3 +36,12 @@ p.set_xlabel("Run Time (Min)");
 
 p1=df_not_zero.plot(x='vote_count',y='revenue',kind="scatter",figsize=(15,8));
 p1.set_title("Compare vote_count and Revenue", fontsize = 15)
+
+
+
+# get the aveatge revenue for each group
+less_than_2000 = df_not_zero.query('vote_count <=2000').mean()['revenue']
+between_2000_4000 = df_not_zero.query('vote_count > 2000 and vote_count <=4000').mean()['revenue']
+between_4000_6000 = df_not_zero.query('vote_count > 4000 and vote_count <=6000').mean()['revenue']
+between_6000_8000 = df_not_zero.query('vote_count > 4000 and vote_count <=6000').mean()['revenue']
+between_8000_10000 = df_not_zero.query('vote_count > 8000 and vote_count <=10000').mean()['revenue']
