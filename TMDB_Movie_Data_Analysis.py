@@ -53,3 +53,12 @@ plt.bar(['>=2000','between_2000_4000','between_4000_6000','between_6000_8000','b
 plt.title('Compare vote_count and Revenue')
 plt.xlabel('Vote Count')
 plt.ylabel('avg Revenue');
+
+
+# Now I will compare Revenue with Votes?
+p3=df_not_zero.plot(x='vote_average',y='revenue',kind="scatter",figsize=(15,8))
+p3.set_title("Compare Vote_Avg and Revenue", fontsize = 15);
+
+
+df_not_zero.vote_average.min() # get minimum of vote
+df_not_zero.vote_average.max() # get maximum of vote
