@@ -77,3 +77,22 @@ plt.bar(['2.2 to 3.2','3.3 to 4.2','4.3 to 5.2','5.3 to 6.2','6.3 to 7.2','7.3 t
 plt.title('Compare vote Avg and Revenue')
 plt.xlabel('Vote')
 plt.ylabel('avg Revenue');
+
+
+#Now I will compare Revenue with the budget
+
+df_not_zero.budget.median() # get the median of the budget
+
+above=df.query('budget >= 24000000.0') # above or equal to the median
+under=df.query('budget < 24000000.0') # under the median
+
+above.revenue.mean() # get the average for the budget that above the median.
+
+under.revenue.mean() # get the average for the budget that under the median.
+
+# bar chart
+plt.figure(figsize=(15,8))
+plt.bar(['Above','Under'],[above.revenue.mean(),under.revenue.mean()])
+plt.title('Compare Median Budget and avg Revenue')
+plt.xlabel('Median Budget')
+plt.ylabel('avg Revenue');
