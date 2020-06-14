@@ -96,3 +96,41 @@ plt.bar(['Above','Under'],[above.revenue.mean(),under.revenue.mean()])
 plt.title('Compare Median Budget and avg Revenue')
 plt.xlabel('Median Budget')
 plt.ylabel('avg Revenue');
+
+
+# what are the characteristics that make a movie has higher votes?
+
+votes_median=df.vote_average.median() # get the median of votes
+print(votes_median)
+
+
+High_votes = df.query('vote_average >= 6.0')
+Low_votes = df.query('vote_average < 6.0')
+High_votes.budget.mean() # get budget average
+
+Low_votes.budget.mean() # get budget average
+
+plt.figure(figsize=(15,8))
+plt.bar(['High_votes (more than or equal to 6.0)','Low_votes (Less than6.0)'],[High_votes.budget.mean(),Low_votes.budget.mean()])
+plt.title('Compare Budget and votes')
+plt.xlabel('Votes')
+plt.ylabel('Budget Avg');
+
+
+High_votes.revenue.mean() # get revenue average.
+Low_votes.revenue.mean() # get revenue average.
+
+plt.figure(figsize=(15,8))
+plt.bar(['High_votes','Low_votes'],[High_votes.revenue.mean(),Low_votes.revenue.mean()])
+plt.title('Compare Revenue and votes')
+plt.xlabel('Votes')
+plt.ylabel('Revenue Avg');
+
+High_votes.popularity.mean()
+Low_votes.popularity.mean()
+
+plt.figure(figsize=(15,8))
+plt.bar(['High_votes','Low_votes'],[High_votes.popularity.mean(),Low_votes.popularity.mean()])
+plt.title('Compare Popularity and votes')
+plt.xlabel('Votes')
+plt.ylabel('Popularity');
