@@ -62,3 +62,18 @@ p3.set_title("Compare Vote_Avg and Revenue", fontsize = 15);
 
 df_not_zero.vote_average.min() # get minimum of vote
 df_not_zero.vote_average.max() # get maximum of vote
+
+# get the aveatge revenue for each group
+between_2_to_3= df_not_zero.query('vote_average >= 2.2 and 3.2>= vote_average').mean()['revenue']
+between_3_to_4= df_not_zero.query('vote_average >= 3.3 and 4.2>= vote_average').mean()['revenue']
+between_4_to_5= df_not_zero.query('vote_average >= 4.3 and 5.2>= vote_average').mean()['revenue']
+between_5_to_6= df_not_zero.query('vote_average >= 5.3 and 6.2>= vote_average').mean()['revenue']
+between_6_to_7= df_not_zero.query('vote_average >= 6.3 and 7.2>= vote_average').mean()['revenue']
+between_7_to_8= df_not_zero.query('vote_average >= 7.3 and 8.5>= vote_average').mean()['revenue']
+
+# bar chart
+plt.figure(figsize=(15,8))
+plt.bar(['2.2 to 3.2','3.3 to 4.2','4.3 to 5.2','5.3 to 6.2','6.3 to 7.2','7.3 to 8.5'],[between_2_to_3,between_3_to_4,between_4_to_5,between_5_to_6,between_6_to_7,between_7_to_8])
+plt.title('Compare vote Avg and Revenue')
+plt.xlabel('Vote')
+plt.ylabel('avg Revenue');
