@@ -134,3 +134,11 @@ plt.bar(['High_votes','Low_votes'],[High_votes.popularity.mean(),Low_votes.popul
 plt.title('Compare Popularity and votes')
 plt.xlabel('Votes')
 plt.ylabel('Popularity');
+
+#How the characteristics of the movie changed over time ?
+
+df_not_zero.release_date.describe()
+
+sum(df_not_zero.release_date.dt.year >=2021) # to get number of relase dates that not correct.
+correct_dates_df= df_not_zero.query('release_date.dt.year <=2021') # to get only the movies with correct relase date.
+correct_dates_df.release_date.describe()
