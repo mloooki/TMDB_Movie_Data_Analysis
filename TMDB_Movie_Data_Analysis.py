@@ -146,7 +146,7 @@ correct_dates_df.release_date.describe()
 # I save it to csv to use excel to calculate moving average for budget and revene
 correct_dates_df.to_csv('add_moving_average.csv',index=False)
 
-moving_avg_df = pd.read_csv('add_moving_average.csv') # load dataset after adding moving average.
+moving_avg_df = pd.read_csv('add_moving_average.csv') # load dataset after adding moving average..
 
 p4 = moving_avg_df.plot(x='release_date',y='moving_budget',kind="line",figsize=(15,8));
 p4.set_title("How Budget Changed Over The Time ?", fontsize = 15)
